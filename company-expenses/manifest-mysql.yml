@@ -1,0 +1,15 @@
+---
+applications:
+- name: company-expenses
+  memory: 2G
+  disk_quota: 2G
+  instances: 1
+  timeout: 300
+  path: company-expenses_1.0.0.2.mda
+  buildpack: https://github.com/mendix/cf-mendix-buildpack
+  env:
+    ADMIN_PASSWORD: Company1234!
+    BUILDPACK_XTRACE: true
+  services:
+  - company-expenses-mysql
+
